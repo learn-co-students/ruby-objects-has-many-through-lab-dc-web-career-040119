@@ -19,17 +19,20 @@ class Artist
 
   def new_song(song_name, genre) #Instance method
     Song.new(song_name, self, genre)
-
-
   end
-
-
 
   def songs
     Song.all.select do |song|
       song.artist == self
-
     end
   end
+
+  def genres
+    self.songs.map do |song|
+      song.genre
+    end
+  end
+
+
 
 end
