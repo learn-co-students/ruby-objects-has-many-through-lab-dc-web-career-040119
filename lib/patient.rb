@@ -1,5 +1,4 @@
 class Patient
-
   attr_reader :name
 
   @@all = []
@@ -14,11 +13,11 @@ class Patient
   end
 
   def appointments
-    Appointment.all.select { |appointment| appointment.patient == self}
+    Appointment.all.select { |appointment| appointment.patient == self }
   end
 
   def doctors
-    self.appointments.map { |appointment| appointment.doctor }.uniq
+    appointments.map(&:doctor).uniq
   end
 
   def self.all

@@ -1,5 +1,4 @@
 class Genre
-
   attr_reader :name
 
   @@all = []
@@ -14,7 +13,7 @@ class Genre
   end
 
   def artists
-    self.songs.map { |song| song.artist }.uniq
+    songs.map(&:artist).uniq
   end
 
   def self.all
