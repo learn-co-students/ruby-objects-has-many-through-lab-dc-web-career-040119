@@ -1,6 +1,7 @@
 require_relative "../lib/patient.rb"
 require_relative "../lib/appointment.rb"
 
+require 'pry'
 
 class Doctor
 
@@ -18,9 +19,11 @@ attr_accessor(:name)
   end
 
   def appointments
-   #  Appointment.all.select do |appointment|
-   # end
+    Appointment.all.select do |appointment|
+      appointment.doctor == self
+   end
   end
+
 
   def self.all
     @@all
