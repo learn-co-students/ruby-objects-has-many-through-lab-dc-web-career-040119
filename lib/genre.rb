@@ -27,7 +27,7 @@ attr_reader(:name, :song)
 
   def artists
     Song.all.collect do |song|
-      song.artist 
+      song.artist
     end
   end
 
