@@ -1,9 +1,10 @@
 require 'pry'
+require_relative "../lib/song.rb"
+require_relative "../lib/artist.rb"
 
 class Genre
 
-attr_reader(:name)
-attr_writer(:songs)
+attr_reader(:name, :song)
 
 
 
@@ -20,12 +21,15 @@ attr_writer(:songs)
     end
   end
 
-
-def artists
-
-end
-
   def self.all
     @@all
   end
+
+  def artists
+    Song.all.collect do |song|
+      song.artist 
+    end
+  end
+
+
 end
