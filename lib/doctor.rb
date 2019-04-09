@@ -24,9 +24,13 @@ attr_accessor(:name)
    end
   end
 
+   def patients
+       self.appointments.map do |appointment|
+         appointment.patient
+       end
+  end
 
   def self.all
     @@all
   end
-
 end

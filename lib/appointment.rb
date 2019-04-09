@@ -9,7 +9,7 @@ attr_accessor(:date, :patient, :doctor)
 
   @@all = []
 
-  def initialize(date, doctor, patient)
+  def initialize(patient, doctor, date)
     @date = date
     @patient = patient
     @doctor = doctor
@@ -18,11 +18,5 @@ attr_accessor(:date, :patient, :doctor)
 
   def self.all
     @@all
-  end
-
-  def patient
-    # binding.pry
-    # Patient.all.select do |patient|
-    # end
   end
 end
