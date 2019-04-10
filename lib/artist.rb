@@ -37,7 +37,7 @@ class Artist
     Song.all.select do |song|
       #binding.pry
       song.artist == self
-
+#Song.all.select{|song| song.Song.artist == self}
     end
     #iterates through all songs
     #finds songs that belong to self
@@ -48,7 +48,9 @@ class Artist
 
     self.songs.map do |song|
       song.genre
-
+      # def genres
+      #     songs.map(&:genre)
+      #   end
       #Song.all.select do ||
 
       #artist.song == self
